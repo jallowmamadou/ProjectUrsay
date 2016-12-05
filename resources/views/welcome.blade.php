@@ -68,12 +68,22 @@
                 <div class="mdl-layout__tab-panel is-active" id="overview">
                   <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
                     <div class="mdl-card mdl-cell mdl-cell--12-col">
-                      <div class="mdl-card__supporting-text">
-                        <h4>Technology</h4>
-                        Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore incididunt elit anim.
+                      <div class="mdl-card__supporting-text flexed">
+                        <a href="#" class="post-avatar">
+                          <img src="https://assets.materialup.com/uploads/65f40866-ec7f-4f83-adfa-965f19db92a7/avatar.jpg" alt="Chris" width="55" height="55" class="avatar">
+                          <h3 class="posted__by-text">Amiga tepasaleh</h3>
+                        </a>
+                        <p class="post-text">Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse. Pariatur occaecat nisi laboris tempor laboris eiusmod qui id Lorem esse commodo in. Exercitation aute dolore deserunt culpa consequat elit labore incididunt elit anim.</p>
                       </div>
                       <div class="mdl-card__actions">
-                        <a href="#" class="mdl-button">Read our features</a>
+                        <!-- Colored icon button -->
+                        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+                          <i class="material-icons">thumb_up</i>
+                        </button>
+                        <!-- Colored icon button -->
+                        <button class="mdl-button mdl-js-button mdl-button--icon">
+                          <i class="material-icons">thumb_down</i>
+                        </button>
                       </div>
                     </div>
                   </section>

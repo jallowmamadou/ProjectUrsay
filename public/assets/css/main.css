@@ -206,3 +206,25 @@ html, body {
 .mdl-demo .mdl-menu__container {
   z-index: 99;
 }
+
+.flexed{
+    display: -webkit-flex; /* Safari */
+    -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+    display: flex;
+    flex-wrap:nowrap;
+}
+
+.post-text{
+    padding: 20px 1em 0px;
+    margin: 0;
+}
+.posted__by-text{
+      font-size: 15px;
+    text-decoration: none;
+    position: absolute;
+    top: 26px;
+    left: 111px;
+    margin: 0;
+    color: #000;
+    font-weight: 600;
+}
