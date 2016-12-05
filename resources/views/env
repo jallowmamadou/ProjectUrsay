@@ -1,6 +1,6 @@
 APP_ENV=local
 APP_DEBUG=true
-APP_KEY=SomeRandomString
+APP_KEY=base64:NGP7dgjv0pZ2OyXnLljCHRrvYyYC2/0BdDRNrRmEPOU=
 APP_URL=http://localhost
 
 DB_CONNECTION=mysql
