@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Modules\Users\AuthenticateUser;
 use App\User;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -86,8 +85,11 @@ class AuthController extends Controller
      * @param Request $request
      * @return mixed
      */
-    public function getSocialAuth($provider = null, AuthenticateUser $authenticateUser, Request $request)
+    public function getSocialAuth($provider = null)
     {
+        $authenticateUser = App::make('App\Modules\Users\AuthenticateUser');
+        $request = App::make('Illuminate\Http\Request');
+
         if (!config("services.$provider")) abort('404');
 
         return $authenticateUser->execute($provider, $request->has('code'), $this);
