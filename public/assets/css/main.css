@@ -229,3 +229,9 @@ html, body {
     font-size: 13px;
     font-weight: 100;
 }
+
+@media screen and (max-width: 768px){
+.mdl-layout__tab {
+    padding: 0 40px;
+}
+}

@@ -11,6 +11,35 @@
 |
 */
 
+Route::get('/login', 'AuthController@login');
+
 Route::get('/', function () {
-    return view('welcome');
+    if(Auth::check()) return view('welcome');
+
+    return 'Hi Anonymous guy';
 });
+
+/*
+|--------------------------------------------------------------------------
+| Restful API for Frontend
+|--------------------------------------------------------------------------
+|
+*/
+Route::group(['prefix' => 'api/v1'], function () {
+    /**
+     * Frontend Api Routes
+     */
+
+    Route::get('/feed/',  [
+            'as' => 'ideas.feed',
+            'uses' => 'IdeasController@index']
+    );
+
+});
+
+
+//Social Auth
+Route::get('/login/{provider?}',[
+    'uses' => 'Auth\AuthController@getSocialAuth',
+    'as'   => 'auth.getSocialAuth'
+]);

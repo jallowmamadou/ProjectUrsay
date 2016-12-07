@@ -37,9 +37,9 @@
             <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
               <header class="mdl-layout__header">
                   <!-- Tabs -->
-                  <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
+                  <div class="mdl-layout__tab-bar mdl-js-ripple-effect" style="background-color: #1976D2;">
                       <!-- Title -->
-                    <span class="mdl-layout-title">LOGO</span>
+                    {{-- <span class="mdl-layout-title">LOGO</span> --}}
                     <!-- Add spacer, to align navigation to the right -->
                     <div class="mdl-layout-spacer"></div>
 

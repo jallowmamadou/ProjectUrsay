@@ -23,4 +23,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function findByEmailOrCreate($data)
+    {
+        return $this->firstOrCreate([
+            'name' => $data->name,
+            'email' => $data->email,
+            'avatar' => $data->avatar
+        ]);
+    }
 }

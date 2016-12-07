@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Modules\Users\AuthenticateUser;
 use App\User;
+use Illuminate\Http\Request;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
@@ -29,6 +31,13 @@ class AuthController extends Controller
      * @var string
      */
     protected $redirectTo = '/';
+
+
+    public function login()
+    {
+
+    }
+
 
     /**
      * Create a new authentication controller instance.
@@ -69,4 +78,26 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+    /**
+     * Redirect user to login to thirdparty.
+     *
+     * @param null $provider
+     * @param AuthenticateUser $authenticateUser
+     * @param Request $request
+     * @return mixed
+     */
+    public function getSocialAuth($provider = null, AuthenticateUser $authenticateUser, Request $request)
+    {
+        if (!config("services.$provider")) abort('404');
+
+        return $authenticateUser->execute($provider, $request->has('code'), $this);
+    }
+
+    public function userHasLoggedIn($user){
+
+        return redirect('/');
+    }
+
+
+
 }
