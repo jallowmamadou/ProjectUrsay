@@ -13,11 +13,14 @@
 
 
 Route::get('/', function () {
-    if(Auth::check()) return view('welcome');
+    if(Auth::check()) return view('welcome')->with('user', Auth::user());
 
     return 'Hi Anonymous guy';
 });
 
+Route::get('/biness', [
+   'uses' => 'Auth\AuthController@intro'
+]);
 Route::get('/logout', [
     'uses' => 'Auth\AuthController@logout',
     'as'   => 'auth.logout'

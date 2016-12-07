@@ -3,8 +3,8 @@
                     <div class="mdl-card mdl-cell mdl-cell--12-col">
                       <div class="mdl-card__supporting-text flexed" style="margin: 40px 40px 0;">
                         <a href="#" class="post-avatar">
-                          <img src="https://assets.materialup.com/uploads/65f40866-ec7f-4f83-adfa-965f19db92a7/avatar.jpg"        alt="Chris" width="55" height="55" class="avatar">
-                          <h3 class="posted__by-text">Amiga tepasaleh</h3>
+                          <img src="{{$user->avatar}}" alt="{{$user->name}}" width="55" height="55" class="avatar">
+                          <h3 class="posted__by-text">{{$user->name}}</h3>
                         </a>
                         <form action="#" class="mdl-cell mdl-cell--12-col">
                           <div class="mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col">

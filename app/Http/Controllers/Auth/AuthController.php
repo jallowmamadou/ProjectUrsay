@@ -8,6 +8,7 @@ use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
+use Illuminate\Contracts\Auth\Guard as Authenticator;
 
 class AuthController extends Controller
 {
@@ -43,8 +44,10 @@ class AuthController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Authenticator $auth)
     {
+        $this->auth = $auth;
+
         $this->middleware($this->guestMiddleware(), ['except' => 'logout']);
     }
 
@@ -100,6 +103,15 @@ class AuthController extends Controller
         return redirect('/');
     }
 
+    /**
+     *
+     */
+    public function intro()
+    {
+        $user = User::find(1)->first();
+        $this->auth->login($user);
 
+        return $this->userHasLoggedIn($user);
+    }
 
 }
