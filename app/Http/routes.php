@@ -18,6 +18,11 @@ Route::get('/', function () {
     return 'Hi Anonymous guy';
 });
 
+Route::get('/logout', [
+    'uses' => 'Auth\AuthController@logout',
+    'as'   => 'auth.logout'
+]);
+
 /*
 |--------------------------------------------------------------------------
 | Restful API for Frontend

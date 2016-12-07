@@ -26,10 +26,16 @@ class User extends Authenticatable
 
     public function findByEmailOrCreate($data)
     {
-        return $this->firstOrCreate([
+        $user = $this->firstOrCreate([
             'name' => $data->name,
             'email' => $data->email,
-            'avatar' => $data->avatar
         ]);
+
+        if($user->avatar != $data->avatar) {
+            $user->avatar = $data->avatar;
+            $user->save();
+        }
+
+        return $user;
     }
 }
