@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/login', 'AuthController@login');
 
 Route::get('/', function () {
     if(Auth::check()) return view('welcome');
